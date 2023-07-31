@@ -12,7 +12,7 @@ function getTypeScriptCompilerOptions(src: string): ts.CompilerOptions {
         duplex: 'half' // https://github.com/microsoft/TypeScript/issues/53157
       } as any).then(r => r.text());
       expect(body).to.equal(text);
-    });
+});
 
 
     // 
