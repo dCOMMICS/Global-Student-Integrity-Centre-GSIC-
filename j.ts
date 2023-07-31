@@ -13,3 +13,12 @@ function getTypeScriptCompilerOptions(src: string): ts.CompilerOptions {
       } as any).then(r => r.text());
       expect(body).to.equal(text);
     });
+
+
+    // 
+
+    interface ILibMap { [libName: string]: string }
+interface IFileMap { [fileName: string]: string }
+class TypeScriptLanguageServiceHost implements ts.LanguageServiceHost {
+	private readonly _ts: typeof import('typescript');
+	private readonly _libs: ILibMap;
